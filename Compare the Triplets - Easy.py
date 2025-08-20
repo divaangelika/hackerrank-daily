@@ -28,8 +28,8 @@ def compareTriplets(a, b):
     
     return res
 
-print(compareTriplets([17, 28, 30], [99, 16, 8]))
-print("test")
+# print(compareTriplets([17, 28, 30], [99, 16, 8]))
+# print("test")
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
