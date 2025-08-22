@@ -34,6 +34,7 @@ def plusMinus(arr):
 
 # print(plusMinus([-4, 3, -9, 0, 4, 1]))
 plusMinus([-4, 3, -9, 0, 4, 1])
+# test
 
 
 # if __name__ == '__main__':
