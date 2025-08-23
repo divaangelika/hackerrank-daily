@@ -14,21 +14,12 @@ import sys
 
 def staircase(n):
     for k in range(n):
-        for i in range(n-1,-1,-1):
-            # print("#", end="")
-            # if i == n-1:
-            #     print("#", end="")
+        # for i in range(n):
+            # while()
+        print(" " * (n-k-1) + "#" * (k+1))
+        # print("#" * (k+1) + " " * (n-1))
+        # print()
             
-            while(i<k and i<0):
-                print("#", end="")
-                break
-            if i == k:
-                print("#", end="")
-            else:
-                print(" ", end="")
-        print()
-    # print()
-
 staircase(10)
     
 
