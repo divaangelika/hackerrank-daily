@@ -13,43 +13,57 @@ import sys
 # The function accepts INTEGER_ARRAY candles as parameter.
 #
 
-def sort_arr(candles):
-    candles_len = len(candles)
+# def sort_arr(candles):
+#     candles_len = len(candles)
     
-    for i in range(candles_len):
-        for k in range(candles_len-1):
-            if candles[k] > candles[k+1]:
-                temp = candles[k+1]
-                candles[k+1] = candles[k]
-                candles[k] = temp
+#     for i in range(candles_len):
+#         for k in range(candles_len-1):
+#             if candles[k] > candles[k+1]:
+#                 temp = candles[k+1]
+#                 candles[k+1] = candles[k]
+#                 candles[k] = temp
     
-    return candles
+#     return candles
+
+# def birthdayCakeCandles(candles):
+#     candles_sorted = sort_arr(candles)
+#     len_sorted_candles = len(candles_sorted)
+#     max_height_candles = candles_sorted[len_sorted_candles-1]
+#     res = 0
+
+#     for i in range(len_sorted_candles):
+#         if candles_sorted[i] == candles_sorted[len_sorted_candles-1]:
+#             res += 1
+    
+#     # print(candles_sorted[len_sorted_candles-1])
+#     return res
 
 def birthdayCakeCandles(candles):
-    candles_sorted = sort_arr(candles)
-    len_sorted_candles = len(candles_sorted)
-    max_height_candles = candles_sorted[len_sorted_candles-1]
-    res = 1
+    max_height = 0
+    res = 0
 
-    for i in range(len_sorted_candles-1):
-        if candles_sorted[i] == max_height_candles:
+    for i in candles:
+        if i > max_height:
+            max_height = i
+            res = 1
+        elif i == max_height:
             res += 1
     
-    # print(candles_sorted[len_sorted_candles-1])
     return res
 
+
 # print(birthdayCakeCandles([3,2,1,3]))
-# print(birthdayCakeCandles([3,1,2]))
+print(birthdayCakeCandles([4,3,1,4]))
 
-if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+# if __name__ == '__main__':
+#     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    candles_count = int(input().strip())
+#     candles_count = int(input().strip())
 
-    candles = list(map(int, input().rstrip().split()))
+#     candles = list(map(int, input().rstrip().split()))
 
-    result = birthdayCakeCandles(candles)
+#     result = birthdayCakeCandles(candles)
 
-    fptr.write(str(result) + '\n')
+#     fptr.write(str(result) + '\n')
 
-    fptr.close()
+#     fptr.close()
