@@ -38,13 +38,13 @@ def miniMaxSum(arr):
         
     print(min_res, max_res)
 
-miniMaxSum([5,2,3,4,1])
+# miniMaxSum([5,2,3,4,1])
 # print(sort_arr([5,1,2,3,4]))
         
 
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-#     arr = list(map(int, input().rstrip().split()))
+    arr = list(map(int, input().rstrip().split()))
 
-#     miniMaxSum(arr)
+    miniMaxSum(arr)
