@@ -16,12 +16,52 @@ import sys
 #
 
 def getTotalX(a, b):
-    len_a = len(a)
-    len_b = len(b)
     count = 0
+    # kelipatan_a = []
+    # kelipatan_b = []
 
-    for i in range(len_a):
-        print(a[i]*(i+1))
+    max_a = a[0]
+    for num in a:
+        if num > max_a:
+            max_a = num
+    
+    min_b = b[0]
+    for num in b:
+        if num < min_b:
+            min_b = num
+
+    # for i in a:
+    #     for k in range(1,10):
+    #         kelipatan_a.append(i*k)
+    #     # return kelipatan_a
+
+    # for i in b:
+    #     for k in range(1,10):
+    #         kelipatan_b.append(i*k)
+    
+    # for j in kelipatan_a:
+    #     if j in kelipatan_b:
+    #         count += 1
+
+    for x in range(max_a, min_b +1):
+        valid = True
+
+        for ai in a:
+            if x % ai != 0:
+                valid = False
+                break
+        
+        if valid:
+            for bi in b:
+                if bi % x != 0:
+                    valid = False
+                    break
+
+        if valid:
+            count += 1
+
+
+    return count
 
 # print(getTotalX([2,4],[16,32,96])) # 3
 print(getTotalX([4],[24,36])) # 2
