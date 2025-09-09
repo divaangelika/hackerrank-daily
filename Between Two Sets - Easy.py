@@ -43,7 +43,7 @@ def getTotalX(a, b):
     #     if j in kelipatan_b:
     #         count += 1
 
-    for x in range(max_a, min_b +1):
+    for x in range(max_a, min_b+1):
         valid = True
 
         for ai in a:
@@ -51,13 +51,13 @@ def getTotalX(a, b):
                 valid = False
                 break
         
-        if valid:
+        if valid == True:
             for bi in b:
                 if bi % x != 0:
                     valid = False
                     break
 
-        if valid:
+        if valid == True:
             count += 1
 
 
