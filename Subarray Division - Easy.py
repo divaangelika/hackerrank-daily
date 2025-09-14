@@ -26,62 +26,33 @@ def birthday(s, d, m):
     # if s_len == 1 and s[0] == d and m == 1:
     #     return count+1
 
-    for i in range(s_len-1):
-        for k in range(i, m+i-1):
+    if m == 1 and s_len == 1:
+        if d > s[0] or d < s[0]:
+            return 0
+        elif d == s[0]:
+            return 1
+    else:       
+        for i in range(s_len-m+1):
             sum_temp = 0
-            sum_temp += s[k]
-            sum_arr.append(s[k])
-            # print("index",i,",",s[k])
-            total = s[k]+s[m+i-1]
-            print(s[k],"+",s[m+i-1],"=",total)
+            for k in range(i, i+m):
+                sum_temp += s[k]
+                # sum_arr.append(s[k])
+                # print("index",i,",",s[k])
+                # total = s[k]+s[m+i-1]
+                # print(s[k],"+",s[m+i-1],"=",total)
 
-            if total == d:
+            if sum_temp == d:
                 count += 1
-            # else:
-            #     count = 
-                # print("index",i,",",k)
-            # # print(s[k],k)
-            
-            # total = 0
-            # for j in sum_arr:
-            #     total += j
-            #     # print(j)
-            
-            # print(total)
 
-
-            # if total == d:
-            #     count += 1
-            #     print("k=",k)
-                # break
-            # else:
-            #     break
-            
-            # m += m
-            # else:
-            #     count = 0
-                # continue
-                # break
-        # break
-    
-    # for k in range(y, s[m]+1):
-    #     sum_temp += s[k]
-    #     sum_arr.append(s[k])
-
-    #     if sum_temp == d:
-    #         count += 1
-        
-    #     y += 1
-    #         # continue
-
-    return sum_arr, count
+    # return sum_arr, count
     # return sum_arr, sum_temp, count
     # return sum_arr, sum_temp
-    # return count
+    return count
 
-print(birthday([1,2,1,3,2],3,2))
-print(birthday([1,1,1,1,1,1],3,2))
-print(birthday([4],4,1))
+print(birthday([1,2,1,3,2],3,2)) #2
+print(birthday([1,1,1,1,1,1],3,2)) #0
+print(birthday([1,2],2,2)) #0
+print(birthday([4],4,1)) #1
             
 
 # if __name__ == '__main__':
