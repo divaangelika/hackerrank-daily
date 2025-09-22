@@ -17,7 +17,6 @@ def migratoryBirds(arr):
     arr_len = len(arr)
     # print(arr)
     count_cont = []
-    flag = []
     max_arr = 0 #2
     res = 0
 
@@ -36,9 +35,10 @@ def migratoryBirds(arr):
             # max_arr = j
             max_arr = count_cont[j]
         
-    for k in range(arr_count):
-        if max_arr == count_cont[k]:
-            res == k
+    for x in range(arr_count):
+        if count_cont[x] == max_arr:
+            res = x+1
+            break
 
 
     # return max_arr, count_cont
