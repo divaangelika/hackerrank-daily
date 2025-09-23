@@ -31,7 +31,7 @@ def dayOfProgrammer(year):
         if year % 4 == 0:
             feb = 29
     elif year == 1918:
-        feb = 14
+        feb = 15
         # return f"26.09.1918"
     else:
         if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
@@ -41,7 +41,8 @@ def dayOfProgrammer(year):
         sum += i
     
     sum += feb
-    sum = abs(sum - day_of_prog)
+    # sum = abs(sum - day_of_prog)
+    sum = day_of_prog - sum
 
     return f"{sum}.09.{year}"
     # print(feb)
