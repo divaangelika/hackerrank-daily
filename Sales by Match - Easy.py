@@ -17,35 +17,72 @@ import sys
 
 def sockMerchant(n, ar):
     ar_len = len(ar)
-    count = 0
-    container = []
-    # flag = 0
+    # count = 0
+    res = 0
+    total_even = 0
+    total_odd = 0
+    total = 0
+    arr_distinct = []
 
     for i in range(ar_len):
-        # count = 0
-        # container.append(ar[i])
-        for k in range(ar_len-1):
-            if ar[i] == ar[k+1]:
-                # container.append(ar[i])
-                container.append(ar[k+1])
+        found = False
+        for k in range(len(arr_distinct)):
+            if ar[i] == arr_distinct[k]:
+                found = True
+                break
+        
+        if found == False:
+            arr_distinct.append(ar[i])
 
-                # if i == 0 and k == 0:
-                #     container.append(ar[i])
+    # [1,2,1,2,1,3,2]
+    # [10,20,20,10,10,30,50,10,20]
+    for j in range(len(arr_distinct)):
+        count = 0
+        for p in range(ar_len):
+            if arr_distinct[j] == ar[p]:
+                count += 1
 
-                # count += 1
-                # print("iterasi:",k)
-                # print(ar[i],ar[k+1])
-                # print("count",count)
-            # if k > 0:
-            #     break
-        # container.append(ar[i])
-        # if i == 1:
-        #     container.append(ar[i])
-        #     break
+        # return count        
+        # res = count % 2
+        # return res
+        # break
+        # print("count=",count)
+        print(arr_distinct[j],"muncul",count,"kali")
 
+        if count == 1:
+            total += 0
+            print("total=",total)
+            # total_even += 0
+            # total_odd += 0
+        else:
+            total += count // 2
+            print("total",total)
+        # elif count % 2 == 0:
+        #     total_even += count // 2 #0 #0
+        #     print("total even=",total_even)
+        # elif count % 2 == 1:
+        #     total_odd += count % 2 #3=1 #3=1
+        #     print("total odd=",total_odd)
+        # else:
+        #     total_even, total_odd = 0
+            
+
+    # res = total_even + total_odd 
+    res += total
+
+    return res, arr_distinct, ar
     
+        
+        # total += res
+
+
+    # return arr_distinct
     # return count
-    return container
+    # return res
+    return res
+
+
+
 
 print(sockMerchant(7,[1,2,1,2,1,3,2])) #2
 print(sockMerchant(9,[10,20,20,10,10,30,50,10,20])) #3
