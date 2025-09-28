@@ -17,10 +17,7 @@ import sys
 
 def sockMerchant(n, ar):
     ar_len = len(ar)
-    # count = 0
     res = 0
-    total_even = 0
-    total_odd = 0
     total = 0
     arr_distinct = []
 
@@ -34,55 +31,24 @@ def sockMerchant(n, ar):
         if found == False:
             arr_distinct.append(ar[i])
 
-    # [1,2,1,2,1,3,2]
-    # [10,20,20,10,10,30,50,10,20]
     for j in range(len(arr_distinct)):
         count = 0
         for p in range(ar_len):
             if arr_distinct[j] == ar[p]:
                 count += 1
 
-        # return count        
-        # res = count % 2
-        # return res
-        # break
-        # print("count=",count)
         print(arr_distinct[j],"muncul",count,"kali")
 
         if count == 1:
             total += 0
             print("total=",total)
-            # total_even += 0
-            # total_odd += 0
         else:
             total += count // 2
             print("total",total)
-        # elif count % 2 == 0:
-        #     total_even += count // 2 #0 #0
-        #     print("total even=",total_even)
-        # elif count % 2 == 1:
-        #     total_odd += count % 2 #3=1 #3=1
-        #     print("total odd=",total_odd)
-        # else:
-        #     total_even, total_odd = 0
-            
 
-    # res = total_even + total_odd 
     res += total
 
     return res, arr_distinct, ar
-    
-        
-        # total += res
-
-
-    # return arr_distinct
-    # return count
-    # return res
-    return res
-
-
-
 
 print(sockMerchant(7,[1,2,1,2,1,3,2])) #2
 print(sockMerchant(9,[10,20,20,10,10,30,50,10,20])) #3
