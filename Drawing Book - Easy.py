@@ -18,29 +18,56 @@ import sys
 def pageCount(n, p):
     ctr_start = 0
     ctr_end = 0
-    res_start = 0
-    res_end = 0
-    
-    for i in range(0,p):
-        ctr_start += 1
-        # if p == i:
-        #     ctr += 1
+    ctr_p = 0
+    ctr_n = 0
+    # res_start = 0
+    # res_end = 0
 
-    for k in range(n,p,-1):
-        ctr_end += 1
+    # # if p == 1:
+    # #     ctr_start = 0
+    # #     ctr_end = 0
     
-    res_start = abs(int((n/p)-ctr_start))
+    # for i in range(0,p):
+    #     ctr_start += 1
+    #     # if p == i:
+    #     #     ctr += 1
 
-    if ctr_end%2 == 0:
-        res_end = abs(int((n/p)-ctr_end-1))
+    # for k in range(n,p,-1):
+    #     ctr_end += 1
+    
+    # res_start = abs(int((n/p)-ctr_start))
+
+    # if ctr_end%2 == 0 or ctr_end == 1:
+    #     # ctr_end = abs(int((n/p)-ctr_end-1))
+    #     res_end = abs(int((n/p)-ctr_end-1))
+    # # else:
+    # #     res_end = abs(int((n/p)-ctr_end))
+    #     # ctr_end = abs(int((n/p)-ctr_end))
+    
+    # return res_start, res_end
+    if p == 1:
+        return 0
     else:
-        res_end = abs(int((n/p)-ctr_end))
-    
+        ctr_start = int(p/2)
+        ctr_p = int(p/2)
+        ctr_n = int(n/2)
+        ctr_end = ctr_n - ctr_p
 
-    if res_start < res_end:
-        return res_start
-    else:
-        return res_end
+        if ctr_start < ctr_end:
+            return ctr_start
+        else:
+            return ctr_end
+
+
+
+
+        
+
+    
+    # elif res_start < res_end:
+    #     return res_start
+    # else:
+    #     return res_end
 
 
     
@@ -48,10 +75,13 @@ def pageCount(n, p):
     # return ctr_start, ctr_end
     # return abs(int((n/p)-ctr_start)), abs(int((n/p)-ctr_end))
 
-print(pageCount(6,2)) #1 #2
-print(pageCount(5,4)) #2 #0
-print(pageCount(5,3)) 
-print(pageCount(2,1)) 
+# print(pageCount(6,2)) #1 #2
+# print(pageCount(5,4)) #2 #0
+# print(pageCount(5,3)) 
+# print(pageCount(2,1)) 
+# print(pageCount(1,1)) 
+# print(pageCount(10,2)) 
+print(pageCount(7,4)) 
 
 
 # if __name__ == '__main__':
